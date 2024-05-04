@@ -1,0 +1,36 @@
+- model: auth.user
+  pk: 1
+  fields:
+#   password in plaintext: adminpassword
+    password: pbkdf2_sha256$1000$8FU3CW68vYKtGBMXUP1jLg==$3PQe7YA99nIP+ewR1IEhx92lXbp6g2Vq7/PTnrc8CPA=
+    is_superuser: true
+    username: admin
+    first_name: ''
+    last_name: ''
+    email: ''
+    is_staff: true
+    is_active: true
+- model: auth.user
+  pk: 2
+  fields:
+#   password in plaintext: alipassword
+    password: pbkdf2_sha256$1000$8FU3CW68vYKtGBMXUP1jLg==$m/fJo5FLSZbtcdBKI7LclSKsAU9OF4gD5FDZ6Vni82M=
+    is_superuser: false
+    username: ali
+    first_name: 'Ali'
+    last_name: 'Moustafa'
+    email: 'ali@email.com'
+    is_staff: false
+    is_active: true
+- model: auth.user
+  pk: 3
+  fields:
+#   password in plaintext: johnpassword
+    password: pbkdf2_sha256$1000$8FU3CW68vYKtGBMXUP1jLg==$bzph8+FgH89mPkMsApLNStuiUO/tLgVd/6lImUwCWdc=
+    is_superuser: false
+    username: john
+    first_name: 'John'
+    last_name: 'Doe'
+    email: 'john@email.com'
+    is_staff: false
+    is_active: true
