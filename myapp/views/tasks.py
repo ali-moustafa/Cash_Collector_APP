@@ -74,21 +74,17 @@ class TaskView(ModelViewSet):
         first_due_time = None
         collector_status = 'Not Frozen'
         for t in collected_tasks:
-            # print(t)
             collected_amount = collected_amount + float(t['amount_due'])
-            # print("curr amount ", collected_amount)
             if collected_amount >= float(os.environ.get('AMOUNT_THRESHOLD', 5000)):
                 current_time = datetime.now()
-                # print("firstt ", first_due_time)
                 if first_due_time is None:
                     first_due_time = datetime.strptime(t['amount_due_at'], '%Y-%m-%dT%H:%M:%SZ')
-                # print("dueee ", first_due_time)
+
                 time_diff = current_time - first_due_time
-                # print(current_time)
                 time_diff_seconds = time_diff.total_seconds()
                 time_diff_hours = int(time_diff_seconds / (60 * 60))
-                # print("hourssss ", time_diff_hours)
                 hours_threshold = int(os.environ.get('DELIVERY_THRESHOLD', 2)) * 24
+
                 if time_diff_hours >= hours_threshold:
                     collector_status = 'Frozen'
                     break

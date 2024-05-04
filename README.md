@@ -17,7 +17,7 @@ Using Postman (recommended) for example:
 - This will create sessionID which will be used to authenticate user to execute other APIs.
 - To see the status of Cash Collector, use `localhost:8000/myapp/tasks/status?cash_collector={employee_id}`
 - To collect/deliver, use `localhost:8000/myapp/tasks/{task_id}/[collect or deliver]` and in the request body {"collected/delivered": "True"}
-- If collect/deliver endpoit didn't work, add 'X-CSRFToken' in the headers and use the 'csrftoken' in Cookies.
+- If collect/deliver endpoint didn't work, add 'X-CSRFToken' in the headers and use the 'csrftoken' in Cookies.
 
 ## Prerequisites
 

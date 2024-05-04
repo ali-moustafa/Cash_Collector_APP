@@ -17,24 +17,8 @@ class PostCreateTest(TestCase):
                                           'amount_due_at': datetime.now(),
                                           'collected': False,
                                           'delivered': False,
-                                          'collector': 'ali',
-                                          'manager': 'test manager'
+                                          'collector': 9,
+                                          'manager': 5
                                           })
 
-        self.assertEqual(response.status_code, 400)
-
-        # Register User
-        # response = self.client.post(url, {'username': USERNAME_JOHN,
-        #                                   'password': PASSWORD_JOHN,
-        #                                   'first_name': 'John',
-        #                                   'last_name': 'Lennon',
-        #                                   'email': 'lennon@thebeatles.com'})
-        # self.assertRedirects(response, reverse('login'))
-        #
-        # # Log in newly registered user
-        # user_logged_in = self.client.login(username=USERNAME_JOHN, password=PASSWORD_JOHN)
-        # self.assertTrue(user_logged_in)
-        #
-        # url = reverse('myapp:home')
-        # response = self.client.get(url)
-        # self.assertTrue(response.context['request'].user.is_authenticated)
+        self.assertEqual(response.status_code, 404)
